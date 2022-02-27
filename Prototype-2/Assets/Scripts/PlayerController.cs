@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // variables
+    public float horizontalInput;
+    public float horizontalSpeed = 10.0f;
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // player's horizontal input is set from Unity's input manager
+        horizontalInput = Input.GetAxis("horizontal");
+        // player's horizontal movement
+        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * horizontalSpeed);
     }
 }
