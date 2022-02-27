@@ -1,2 +1,2 @@
 # prototype-2
-Stampede defense game developed with Unity.
+Demo stampede defense game developed with Unity.
