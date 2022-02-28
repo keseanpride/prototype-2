@@ -30,5 +30,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
+
+        // player input for launching projectiles
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            // creates projectile to launch from players current position in addition to projectile's own rotation
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
     }
 }
