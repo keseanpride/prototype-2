@@ -8,19 +8,18 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] animalPrefabs;
     private float spawnRangeX = 20.0f;
     private float spawnPosZ = 20.0f;
+    private float startDelay = 2.0f;
+    private float spawnInterval = 1.5f;
 
     void Start()
     {
-        
+        // invoke function for looping animal spawning
+        InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
     }
 
     void Update()
     {
-        // player input for spawning animal prefabs from animal spawning function
-        if (Input.GetKeyDown(KeyCode.S)) {
-            // calls animal spawning function
-            SpawnRandomAnimal();
-        }
+
     }
 
     void SpawnRandomAnimal() {
